@@ -138,15 +138,15 @@ namespace HotelReservationSystem
         public static string FindCheapestHotelName(string checkInDate, string checkOutDate)
         {
             int leastCost = FindCheapestHotelRate(checkInDate, checkOutDate);
-            if(leastCost == GetLakewoodCost(checkInDate, checkOutDate))
+            if (leastCost == GetLakewoodCost(checkInDate, checkOutDate))
             {
-                if(leastCost == GetBridgewoodCost(checkInDate, checkOutDate))
+                if (leastCost == GetBridgewoodCost(checkInDate, checkOutDate))
                 {
                     return "Lakewood and Bridgewood";
                 }
                 return "Lakewood";
             }
-            else if(leastCost == GetBridgewoodCost(checkInDate, checkOutDate))
+            else if (leastCost == GetBridgewoodCost(checkInDate, checkOutDate))
             {
                 if (leastCost == GetRidgewoodCost(checkInDate, checkOutDate))
                 {
@@ -161,6 +161,43 @@ namespace HotelReservationSystem
                     return "Ridgewood and Lakewood";
                 }
                 return "Ridgewood";
+            }
+        }
+        public static int GetRatingOfHotel(string hotel)
+        {
+            if (hotel.Equals("Lakewood"))
+            {
+                return 3;
+            }
+            else if (hotel.Equals("Bridgewood"))
+            {
+                return 4;
+            }
+            else
+            {
+                return 5;
+            }
+        }
+        public static string FindCheapestBestRatedHotelName(string checkInDate, string checkOutDate)
+        {
+            string hotelName = FindCheapestHotelName(checkInDate, checkOutDate);
+            if (hotelName.Contains("and"))
+            {
+                string[] hotels = hotelName.Split(" and ");
+                int rating1 = GetRatingOfHotel(hotels[0]);
+                int rating2 = GetRatingOfHotel(hotels[1]);
+                if (rating1 > rating2)
+                {
+                    return hotels[0];
+                }
+                else
+                {
+                    return hotels[1];
+                }
+            }
+            else
+            {
+                return hotelName;
             }
         }
     }
