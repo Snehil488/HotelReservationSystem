@@ -7,7 +7,7 @@ namespace HotelReservationSystemTest
     public class UnitTest1
     {
         [TestMethod]
-        public void Adding_Weekday_And_Weekend_RegularCustomerRates_And_Verifying()
+        public void Adding_Rating_To_Hotels_And_Verifying()
         {
             int expectedRating = 5;
             Hotel lakeWood = new Hotel
