@@ -212,5 +212,41 @@ namespace HotelReservationSystem
                 return hotelName;
             }
         }
+        public static int FindBestRatedHotelRate(string checkInDate, string checkOutDate)
+        {
+            int lakewoodRating = GetRatingOfHotel("Lakewood");
+            int bridgewoodRating = GetRatingOfHotel("Bridgewood");
+            int ridgewoodRating = GetRatingOfHotel("Ridgewood");
+            int maxRating = lakewoodRating > bridgewoodRating ? lakewoodRating : bridgewoodRating;
+            maxRating = maxRating > ridgewoodRating ? maxRating : ridgewoodRating;
+            if(maxRating == GetRatingOfHotel("Ridgewood"))
+            {
+                return GetRidgewoodCost(checkInDate, checkOutDate);
+            }
+            else if(maxRating == GetRatingOfHotel("Bridgewood"))
+            {
+                return GetBridgewoodCost(checkInDate, checkOutDate);
+            }
+            else
+            {
+                return GetLakewoodCost(checkInDate, checkOutDate);
+            }
+        }
+        public static string FindBestRatedHotelName(string checkInDate, string checkOutDate)
+        {
+            int cost = FindBestRatedHotelRate(checkInDate, checkOutDate);
+            if (cost == GetRidgewoodCost(checkInDate, checkOutDate))
+            {
+                return "Ridgewood";
+            }
+            else if(cost == GetRidgewoodCost(checkInDate, checkOutDate))
+            {
+                return "Bridgewood";
+            }
+            else
+            {
+                return "Lakewood";
+            }
+        }
     }
 }
