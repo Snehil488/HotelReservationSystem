@@ -54,9 +54,9 @@ namespace HotelReservationSystem
             Hotel lakeWood = new Hotel();
             lakeWood.WeekdayRateForRegularCustomer = 110;
             lakeWood.WeekendRateForRegularCustomer = 90;
-            string checkInday = GetDay(checkInDate);
-            string checkOutday = GetDay(checkOutDate);
-            if (checkInday.Equals("Saturday") || checkInday.Equals("Sunday"))
+            string checkInDay = GetDay(checkInDate);
+            string checkOutDay = GetDay(checkOutDate);
+            if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
             {
                 totalCost += lakeWood.WeekendRateForRegularCustomer;
             }
@@ -64,7 +64,7 @@ namespace HotelReservationSystem
             {
                 totalCost += lakeWood.WeekdayRateForRegularCustomer;
             }
-            if (checkOutday.Equals("Saturday") || checkOutday.Equals("Sunday"))
+            if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
             {
                 totalCost += lakeWood.WeekendRateForRegularCustomer;
             }
@@ -80,9 +80,9 @@ namespace HotelReservationSystem
             Hotel bridgeWood = new Hotel();
             bridgeWood.WeekdayRateForRegularCustomer = 150;
             bridgeWood.WeekendRateForRegularCustomer = 50;
-            string checkInday = GetDay(checkInDate);
-            string checkOutday = GetDay(checkOutDate);
-            if (checkInday.Equals("Saturday") || checkInday.Equals("Sunday"))
+            string checkInDay = GetDay(checkInDate);
+            string checkOutDay = GetDay(checkOutDate);
+            if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
             {
                 totalCost += bridgeWood.WeekendRateForRegularCustomer;
             }
@@ -90,7 +90,7 @@ namespace HotelReservationSystem
             {
                 totalCost += bridgeWood.WeekdayRateForRegularCustomer;
             }
-            if (checkOutday.Equals("Saturday") || checkOutday.Equals("Sunday"))
+            if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
             {
                 totalCost += bridgeWood.WeekendRateForRegularCustomer;
             }
@@ -106,9 +106,9 @@ namespace HotelReservationSystem
             Hotel ridgeWood = new Hotel();
             ridgeWood.WeekdayRateForRegularCustomer = 220;
             ridgeWood.WeekendRateForRegularCustomer = 150;
-            string checkInday = GetDay(checkInDate);
-            string checkOutday = GetDay(checkOutDate);
-            if (checkInday.Equals("Saturday") || checkInday.Equals("Sunday"))
+            string checkInDay = GetDay(checkInDate);
+            string checkOutDay = GetDay(checkOutDate);
+            if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
             {
                 totalCost += ridgeWood.WeekendRateForRegularCustomer;
             }
@@ -116,7 +116,7 @@ namespace HotelReservationSystem
             {
                 totalCost += ridgeWood.WeekdayRateForRegularCustomer;
             }
-            if (checkOutday.Equals("Saturday") || checkOutday.Equals("Sunday"))
+            if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
             {
                 totalCost += ridgeWood.WeekendRateForRegularCustomer;
             }
