@@ -165,17 +165,29 @@ namespace HotelReservationSystem
         }
         public static int GetRatingOfHotel(string hotel)
         {
+            Hotel lakeWood = new Hotel
+            {
+                Rating = 3
+            };
+            Hotel bridgeWood = new Hotel
+            {
+                Rating = 4
+            };
+            Hotel ridgeWood = new Hotel
+            {
+                Rating = 5
+            };
             if (hotel.Equals("Lakewood"))
             {
-                return 3;
+                return lakeWood.Rating;
             }
             else if (hotel.Equals("Bridgewood"))
             {
-                return 4;
+                return bridgeWood.Rating;
             }
             else
             {
-                return 5;
+                return ridgeWood.Rating;
             }
         }
         public static string FindCheapestBestRatedHotelName(string checkInDate, string checkOutDate)
