@@ -7,7 +7,7 @@ namespace HotelReservationSystemTest
     public class UnitTest1
     {
         [TestMethod]
-        public void Adding_Weekday_And_Weekend_RegularCustomerRates_And_Verifying()
+        public void Given_Date_Range_Including_Weekend_Should_Return_Cheapest_Hotel()
         {
             int expectedHotelRate = 200;
             string expectedHotelName = "Lakewood and Bridgewood";
