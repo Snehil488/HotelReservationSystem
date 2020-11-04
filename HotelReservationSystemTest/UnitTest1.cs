@@ -7,14 +7,39 @@ namespace HotelReservationSystemTest
     public class UnitTest1
     {
         [TestMethod]
-        public void Given_Date_Range_Should_Return_BestRated_Hotel_Ridgewood()
+        public void Adding_Weekday_And_Weekend_RewardCustomerRates_And_Verifying()
         {
-            string expectedHotelName = "Ridgewood";
-            int expectedRate = 370;
-            int actualRate = Operation.FindBestRatedHotelRate("11Sep2020", "12Sep2020");
-            string actualHotelName = Operation.FindBestRatedHotelName("11Sep2020", "12Sep2020");
-            Assert.AreEqual(expectedRate, actualRate);
-            Assert.AreEqual(expectedHotelName, actualHotelName);
+            Hotel lakeWood = new Hotel
+            {
+                WeekdayRateForRegularCustomer = 110,
+                WeekendRateForRegularCustomer = 90,
+                WeekdayRateForRewardCustomer = 80,
+                WeekendRateForRewardCustomer = 80,
+                Rating = 3
+            };
+            Hotel bridgeWood = new Hotel
+            {
+                WeekdayRateForRegularCustomer = 150,
+                WeekendRateForRegularCustomer = 50,
+                WeekdayRateForRewardCustomer = 110,
+                WeekendRateForRewardCustomer = 50,
+                Rating = 4
+            };
+            Hotel ridgeWood = new Hotel
+            {
+                WeekdayRateForRegularCustomer = 220,
+                WeekendRateForRegularCustomer = 150,
+                WeekdayRateForRewardCustomer = 100,
+                WeekendRateForRewardCustomer = 40,
+                Rating = 5
+            };
+            //checking for lakewood
+            int expectedWeekdayRate = 80;
+            int expectedWeekendRate = 80;
+            int actualWeekdayRate = lakeWood.WeekdayRateForRewardCustomer;
+            int actualWeekendRate = lakeWood.WeekendRateForRewardCustomer;   
+            Assert.AreEqual(expectedWeekendRate, actualWeekendRate);
+            Assert.AreEqual(expectedWeekdayRate, actualWeekdayRate);
         }
     }
 }

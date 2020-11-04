@@ -10,18 +10,24 @@ namespace HotelReservationSystem
         {
             WeekdayRateForRegularCustomer = 110,
             WeekendRateForRegularCustomer = 90,
+            WeekdayRateForRewardCustomer = 80,
+            WeekendRateForRewardCustomer = 80,
             Rating = 3
         };
         private static Hotel bridgeWood = new Hotel
         {
             WeekdayRateForRegularCustomer = 150,
             WeekendRateForRegularCustomer = 50,
+            WeekdayRateForRewardCustomer = 110,
+            WeekendRateForRewardCustomer = 50,
             Rating = 4
         };
         private static Hotel ridgeWood = new Hotel
         {
             WeekdayRateForRegularCustomer = 220,
             WeekendRateForRegularCustomer = 150,
+            WeekdayRateForRewardCustomer = 100,
+            WeekendRateForRewardCustomer = 40,
             Rating = 5
         };
         private static int totalCost = 0;
