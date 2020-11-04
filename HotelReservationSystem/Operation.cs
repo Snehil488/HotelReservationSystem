@@ -6,6 +6,8 @@ namespace HotelReservationSystem
 {
     public class Operation
     {
+        private const string REWARD_CUSTOMER = "Reward";
+        private const string REGULAR_CUSTOMER = "Regular";
         private static Hotel lakeWood = new Hotel
         {
             WeekdayRateForRegularCustomer = 110,
@@ -72,98 +74,167 @@ namespace HotelReservationSystem
             DateTime d = new DateTime(year, Operation.GetMonthInDigits(month), day);
             return d.DayOfWeek.ToString();
         }
-        public static int GetLakewoodCost(string checkInDate, string checkOutDate)
+        public static int GetLakewoodCost(string checkInDate, string checkOutDate, string customerType)
         {
             totalCost = 0;
             string checkInDay = GetDay(checkInDate);
             string checkOutDay = GetDay(checkOutDate);
-            if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+            switch (customerType)
             {
-                totalCost += lakeWood.WeekendRateForRegularCustomer;
-            }
-            else
-            {
-                totalCost += lakeWood.WeekdayRateForRegularCustomer;
-            }
-            if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
-            {
-                totalCost += lakeWood.WeekendRateForRegularCustomer;
-            }
-            else
-            {
-                totalCost += lakeWood.WeekdayRateForRegularCustomer;
+                case REGULAR_CUSTOMER:
+                    if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+                    {
+                        totalCost += lakeWood.WeekendRateForRegularCustomer;
+                    }
+                    else
+                    {
+                        totalCost += lakeWood.WeekdayRateForRegularCustomer;
+                    }
+                    if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
+                    {
+                        totalCost += lakeWood.WeekendRateForRegularCustomer;
+                    }
+                    else
+                    {
+                        totalCost += lakeWood.WeekdayRateForRegularCustomer;
+                    }
+                    break;
+                case REWARD_CUSTOMER:
+                    if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+                    {
+                        totalCost += lakeWood.WeekendRateForRewardCustomer;
+                    }
+                    else
+                    {
+                        totalCost += lakeWood.WeekdayRateForRewardCustomer;
+                    }
+                    if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
+                    {
+                        totalCost += lakeWood.WeekendRateForRewardCustomer;
+                    }
+                    else
+                    {
+                        totalCost += lakeWood.WeekdayRateForRewardCustomer;
+                    }
+                    break;
             }
             return totalCost;
         }
-        public static int GetBridgewoodCost(string checkInDate, string checkOutDate)
+        public static int GetBridgewoodCost(string checkInDate, string checkOutDate, string customerType)
         {
             totalCost = 0;
             string checkInDay = GetDay(checkInDate);
             string checkOutDay = GetDay(checkOutDate);
-            if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+            switch (customerType)
             {
-                totalCost += bridgeWood.WeekendRateForRegularCustomer;
-            }
-            else
-            {
-                totalCost += bridgeWood.WeekdayRateForRegularCustomer;
-            }
-            if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
-            {
-                totalCost += bridgeWood.WeekendRateForRegularCustomer;
-            }
-            else
-            {
-                totalCost += bridgeWood.WeekdayRateForRegularCustomer;
+                case REGULAR_CUSTOMER:
+                    if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+                    {
+                        totalCost += bridgeWood.WeekendRateForRegularCustomer;
+                    }
+                    else
+                    {
+                        totalCost += bridgeWood.WeekdayRateForRegularCustomer;
+                    }
+                    if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
+                    {
+                        totalCost += bridgeWood.WeekendRateForRegularCustomer;
+                    }
+                    else
+                    {
+                        totalCost += bridgeWood.WeekdayRateForRegularCustomer;
+                    }
+                    break;
+                case REWARD_CUSTOMER:
+                    if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+                    {
+                        totalCost += bridgeWood.WeekendRateForRewardCustomer;
+                    }
+                    else
+                    {
+                        totalCost += bridgeWood.WeekdayRateForRewardCustomer;
+                    }
+                    if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
+                    {
+                        totalCost += bridgeWood.WeekendRateForRewardCustomer;
+                    }
+                    else
+                    {
+                        totalCost += bridgeWood.WeekdayRateForRewardCustomer;
+                    }
+                    break;
             }
             return totalCost;
         }
-        public static int GetRidgewoodCost(string checkInDate, string checkOutDate)
+        public static int GetRidgewoodCost(string checkInDate, string checkOutDate, string customerType)
         {
             totalCost = 0;
             string checkInDay = GetDay(checkInDate);
             string checkOutDay = GetDay(checkOutDate);
-            if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+            switch (customerType)
             {
-                totalCost += ridgeWood.WeekendRateForRegularCustomer;
-            }
-            else
-            {
-                totalCost += ridgeWood.WeekdayRateForRegularCustomer;
-            }
-            if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
-            {
-                totalCost += ridgeWood.WeekendRateForRegularCustomer;
-            }
-            else
-            {
-                totalCost += ridgeWood.WeekdayRateForRegularCustomer;
+                case REGULAR_CUSTOMER:
+                    if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+                    {
+                        totalCost += ridgeWood.WeekendRateForRegularCustomer;
+                    }
+                    else
+                    {
+                        totalCost += ridgeWood.WeekdayRateForRegularCustomer;
+                    }
+                    if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
+                    {
+                        totalCost += ridgeWood.WeekendRateForRegularCustomer;
+                    }
+                    else
+                    {
+                        totalCost += ridgeWood.WeekdayRateForRegularCustomer;
+                    }
+                    break;
+                case REWARD_CUSTOMER:
+                    if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
+                    {
+                        totalCost += ridgeWood.WeekendRateForRewardCustomer;
+                    }
+                    else
+                    {
+                        totalCost += ridgeWood.WeekdayRateForRewardCustomer;
+                    }
+                    if (checkOutDay.Equals("Saturday") || checkOutDay.Equals("Sunday"))
+                    {
+                        totalCost += ridgeWood.WeekendRateForRewardCustomer;
+                    }
+                    else
+                    {
+                        totalCost += ridgeWood.WeekdayRateForRewardCustomer;
+                    }
+                    break;
             }
             return totalCost;
         }
-        public static int FindCheapestHotelRate(string checkInDate, string checkOutDate)
+        public static int FindCheapestHotelRate(string checkInDate, string checkOutDate, string customerType)
         {
-            int lakeWoodCost = GetLakewoodCost(checkInDate, checkOutDate);
-            int bridgeWoodCost = GetBridgewoodCost(checkInDate, checkOutDate);
-            int ridgeWoodCost = GetRidgewoodCost(checkInDate, checkOutDate);
+            int lakeWoodCost = GetLakewoodCost(checkInDate, checkOutDate, customerType);
+            int bridgeWoodCost = GetBridgewoodCost(checkInDate, checkOutDate, customerType);
+            int ridgeWoodCost = GetRidgewoodCost(checkInDate, checkOutDate, customerType);
             int leastCost = lakeWoodCost < bridgeWoodCost ? lakeWoodCost : bridgeWoodCost;
             leastCost = leastCost < ridgeWoodCost ? leastCost : ridgeWoodCost;
             return leastCost;
         }
-        public static string FindCheapestHotelName(string checkInDate, string checkOutDate)
+        public static string FindCheapestHotelName(string checkInDate, string checkOutDate, string customerType)
         {
-            int leastCost = FindCheapestHotelRate(checkInDate, checkOutDate);
-            if (leastCost == GetLakewoodCost(checkInDate, checkOutDate))
+            int leastCost = FindCheapestHotelRate(checkInDate, checkOutDate, customerType);
+            if (leastCost == GetLakewoodCost(checkInDate, checkOutDate, customerType))
             {
-                if (leastCost == GetBridgewoodCost(checkInDate, checkOutDate))
+                if (leastCost == GetBridgewoodCost(checkInDate, checkOutDate, customerType))
                 {
                     return "Lakewood and Bridgewood";
                 }
                 return "Lakewood";
             }
-            else if (leastCost == GetBridgewoodCost(checkInDate, checkOutDate))
+            else if (leastCost == GetBridgewoodCost(checkInDate, checkOutDate, customerType))
             {
-                if (leastCost == GetRidgewoodCost(checkInDate, checkOutDate))
+                if (leastCost == GetRidgewoodCost(checkInDate, checkOutDate, customerType))
                 {
                     return "Bridgewood and Ridgewood";
                 }
@@ -171,7 +242,7 @@ namespace HotelReservationSystem
             }
             else
             {
-                if (leastCost == GetLakewoodCost(checkInDate, checkOutDate))
+                if (leastCost == GetLakewoodCost(checkInDate, checkOutDate, customerType))
                 {
                     return "Ridgewood and Lakewood";
                 }
@@ -193,9 +264,9 @@ namespace HotelReservationSystem
                 return ridgeWood.Rating;
             }
         }
-        public static string FindCheapestBestRatedHotelName(string checkInDate, string checkOutDate)
+        public static string FindCheapestBestRatedHotelName(string checkInDate, string checkOutDate,string customerType)
         {
-            string hotelName = FindCheapestHotelName(checkInDate, checkOutDate);
+            string hotelName = FindCheapestHotelName(checkInDate, checkOutDate, customerType);
             if (hotelName.Contains("and"))
             {
                 string[] hotels = hotelName.Split(" and ");
@@ -215,7 +286,7 @@ namespace HotelReservationSystem
                 return hotelName;
             }
         }
-        public static int FindBestRatedHotelRate(string checkInDate, string checkOutDate)
+        public static int FindBestRatedHotelRate(string checkInDate, string checkOutDate, string customerType)
         {
             int lakewoodRating = GetRatingOfHotel("Lakewood");
             int bridgewoodRating = GetRatingOfHotel("Bridgewood");
@@ -224,25 +295,25 @@ namespace HotelReservationSystem
             maxRating = maxRating > ridgewoodRating ? maxRating : ridgewoodRating;
             if(maxRating == GetRatingOfHotel("Ridgewood"))
             {
-                return GetRidgewoodCost(checkInDate, checkOutDate);
+                return GetRidgewoodCost(checkInDate, checkOutDate, customerType);
             }
             else if(maxRating == GetRatingOfHotel("Bridgewood"))
             {
-                return GetBridgewoodCost(checkInDate, checkOutDate);
+                return GetBridgewoodCost(checkInDate, checkOutDate, customerType);
             }
             else
             {
-                return GetLakewoodCost(checkInDate, checkOutDate);
+                return GetLakewoodCost(checkInDate, checkOutDate, customerType);
             }
         }
-        public static string FindBestRatedHotelName(string checkInDate, string checkOutDate)
+        public static string FindBestRatedHotelName(string checkInDate, string checkOutDate, string customerType)
         {
-            int cost = FindBestRatedHotelRate(checkInDate, checkOutDate);
-            if (cost == GetRidgewoodCost(checkInDate, checkOutDate))
+            int cost = FindBestRatedHotelRate(checkInDate, checkOutDate, customerType);
+            if (cost == GetRidgewoodCost(checkInDate, checkOutDate, customerType))
             {
                 return "Ridgewood";
             }
-            else if(cost == GetRidgewoodCost(checkInDate, checkOutDate))
+            else if(cost == GetRidgewoodCost(checkInDate, checkOutDate, customerType))
             {
                 return "Bridgewood";
             }
