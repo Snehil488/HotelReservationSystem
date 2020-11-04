@@ -6,6 +6,24 @@ namespace HotelReservationSystem
 {
     public class Operation
     {
+        private static Hotel lakeWood = new Hotel
+        {
+            WeekdayRateForRegularCustomer = 110,
+            WeekendRateForRegularCustomer = 90,
+            Rating = 3
+        };
+        private static Hotel bridgeWood = new Hotel
+        {
+            WeekdayRateForRegularCustomer = 150,
+            WeekendRateForRegularCustomer = 50,
+            Rating = 4
+        };
+        private static Hotel ridgeWood = new Hotel
+        {
+            WeekdayRateForRegularCustomer = 220,
+            WeekendRateForRegularCustomer = 150,
+            Rating = 5
+        };
         private static int totalCost = 0;
         public static int GetMonthInDigits(string month)
         {
@@ -51,9 +69,6 @@ namespace HotelReservationSystem
         public static int GetLakewoodCost(string checkInDate, string checkOutDate)
         {
             totalCost = 0;
-            Hotel lakeWood = new Hotel();
-            lakeWood.WeekdayRateForRegularCustomer = 110;
-            lakeWood.WeekendRateForRegularCustomer = 90;
             string checkInDay = GetDay(checkInDate);
             string checkOutDay = GetDay(checkOutDate);
             if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
@@ -77,9 +92,6 @@ namespace HotelReservationSystem
         public static int GetBridgewoodCost(string checkInDate, string checkOutDate)
         {
             totalCost = 0;
-            Hotel bridgeWood = new Hotel();
-            bridgeWood.WeekdayRateForRegularCustomer = 150;
-            bridgeWood.WeekendRateForRegularCustomer = 50;
             string checkInDay = GetDay(checkInDate);
             string checkOutDay = GetDay(checkOutDate);
             if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
@@ -103,9 +115,6 @@ namespace HotelReservationSystem
         public static int GetRidgewoodCost(string checkInDate, string checkOutDate)
         {
             totalCost = 0;
-            Hotel ridgeWood = new Hotel();
-            ridgeWood.WeekdayRateForRegularCustomer = 220;
-            ridgeWood.WeekendRateForRegularCustomer = 150;
             string checkInDay = GetDay(checkInDate);
             string checkOutDay = GetDay(checkOutDate);
             if (checkInDay.Equals("Saturday") || checkInDay.Equals("Sunday"))
@@ -165,18 +174,6 @@ namespace HotelReservationSystem
         }
         public static int GetRatingOfHotel(string hotel)
         {
-            Hotel lakeWood = new Hotel
-            {
-                Rating = 3
-            };
-            Hotel bridgeWood = new Hotel
-            {
-                Rating = 4
-            };
-            Hotel ridgeWood = new Hotel
-            {
-                Rating = 5
-            };
             if (hotel.Equals("Lakewood"))
             {
                 return lakeWood.Rating;
