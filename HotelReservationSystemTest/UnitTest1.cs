@@ -7,7 +7,7 @@ namespace HotelReservationSystemTest
     public class UnitTest1
     {
         [TestMethod]
-        public void Given_Date_Range_Should_Return_BestRated_Hotel()
+        public void Given_Date_Range_Should_Return_BestRated_Hotel_Ridgewood()
         {
             string expectedHotelName = "Ridgewood";
             int expectedRate = 370;
